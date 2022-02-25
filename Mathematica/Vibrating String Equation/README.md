@@ -2,4 +2,4 @@ I considered a given vibrating string equation subject to boundary conditions an
 
 This equation can be interpreted as a mathematical model of vibrations of a longer string whose endpoints are fixed and the end parts of this longer string are rigid (soaked in super-glue). Assume that the initial shape of the flexible part of the longer string is given by a given function. Based on this knowledge, I had to find the equation for the initial shape of the entire string. Once all of these steps were completed, I had the correct tools to illustrate an animated version of a vibrating string.
 
-In the top part of the illustartion, you can see the forming of the curve.In the last illustration,it's the vibrating equation as a whole. The main difficulty for the illustration were finding the fixed endpoints and being able to to illustarte them.
+In the top part of the illustration, you can see the forming of the curve.In the last illustration,it's the vibrating equation as a whole. The main difficulty for the illustration were finding the fixed endpoints and being able to to illustarte them.
