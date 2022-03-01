@@ -1,0 +1,36 @@
+There was a lot of thought into the design before the XML file was presented, once that was presented our design changed a lot. The first major step 
+was to parse through each xml file and start there. Once that was done, it made sense to us how to use this information and create concise classes. 
+First off, we noticed that the rooms had a fixed length, so we figured an object board will have a fixed length of rooms so the board should be in 
+charge of the rooms, neighbors, and moving. This did cause some issues since casting office and trailer were not counted in the <sets> node in the XML 
+file. We thought about making trailer and casting office implement or extend the room class. This did cause some problems due to the array of rooms, 
+java didn't seem to like that so we moved on from that idea and just created those rooms (with the attributes from the file) and added them to the 
+ array. This suffered in cohesion, especially for casting office. Casting Office would make sense to be in it's own class since the act of ranking up 
+in it, would increase cohesion. 
+
+Each class had high functional cohesion, especially when it came to room and board. The way we implemented it from the xml file helped us think about 
+what classes will do what. A lot of the change from the original design was us trying the original design and then realizing it would be a lot better 
+in a different class. Acting was a great example of this, we originally had it in the scene class, so the scene class would've had to communicate to 
+3 other classes just to do one job. Where, in room, the information was already there since room had a scene, players, and just needed a dice. There 
+were other examples of this, moving rooms for example, was in the room class where the neighbor rooms information was. However, it was easier to 
+implement in the board class where there was a list of rooms and the only data the class needed was requested using a getter. There was also some 
+duplicate code that we had, and we put that together and in it's own method if it required it. This happened early in the stages with the move method. 
+The move method would invoke turn inside of it, instead we were able to separate them so each one was performing it's own task. Room was tasked with 
+completing scenes and giving roles. Board class's purpose was to give the room different scenes and players. Another purpose (which is where another 
+class would've been nice), was ranking up.  
+
+Having getters and setters while class methods and attributes were set to private, was a really good way to implement encapsulation which also helped 
+reduce coupling. Early on, it was really easy to have content coupling as it was easy to get information and then use calculations with it. Once we 
+studied more about what coupling was, and that it is inevitable in large projects, we were able to reduce some coupling by changing some designs on 
+methods. One example was when we needed to calculate scores we had the method grab 3 separate actor data and then do calculations within the method. 
+We found that doing the calculation within the actor class then grabbing one piece of information reduced coupling a lot. Once we figured that out, we 
+changed some of the pattern around, like moving some methods into classes that were already getting that information. This also helped with cohesion, 
+since before we had two classes doing the same job essentially. After we updated our design, our coupling was more of data coupling than content, 
+which is a big improvement. 
+
+This project was a good example of a MVC Design and it was easy to implement. The view was the command line, which displayed various facts about the 
+game. The controller was the Deadwood class which controlled input and flowed data and information into the appropriate class. While the other classes 
+were very good at doing it's own job using the data and calculating behind the scenes. 
+
+Our code could improve cohesion with casting office and we hope to implement that in our next project. 
+
+
